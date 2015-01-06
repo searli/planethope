@@ -1,0 +1,26 @@
+dependencies:
+- rpm:
+  - python3
+- if $venv and not $py3:
+  - rpm:
+    - python-virtualenv
+- if not $venv:
+  - rpm:
+    - python${py3}-django
+- rpm:
+  - vim-nerdtree
+  - vim-enhanced
+  - vim-command-t
+  - vim-X11
+  - ctags
+  - vim-taglist
+devassistant_version: 0.9.3
+original_kwargs:
+  github: !!python/unicode 'searli'
+  name: !!python/unicode '/home/andreas/Projects/Django/planethope2/planethope'
+  py3: 3
+  venv: !!python/unicode 'venv'
+  vim: true
+project_type:
+- python
+- django
